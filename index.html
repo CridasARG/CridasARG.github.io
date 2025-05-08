@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>TOL Multi Player Sale</title>
+  <style>
+    @font-face {
+      font-family: 'Gilroy';
+      src: url('fonts/Gilroy-Regular.ttf') format('truetype');
+      font-weight: 200;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Gilroy';
+      src: url('fonts/Gilroy-Medium.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+    /* @font-face {
+      font-family: 'Gilroy';
+      src: url('fonts/Gilroy-ExtraBold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+    } */
+    *{font-family: 'Gilroy';
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:antialiased;
+    font-smooth:antialiased ;
+    }
+    #PostProceso {
+      display: none;
+    }
+    body {
+      align-items: center;
+      justify-items: center;
+      background-color: #e5e5e5;
+      font-family: 'Gilroy', sans-serif;
+    }
+    table { border-collapse: collapse; width: auto; margin-bottom: 20px;}
+    th, td { border-bottom: 01px solid rgb(242, 242, 242); padding: 6px; text-align: center; }
+    input { width: 90%;      font-family: 'Gilroy', sans-serif;
+    }
+    canvas { display: none; }
+    canvas { border: none; }
+    img { margin: 10px; max-width: 100%; }
+
+    .BGgroup {
+      font-family: 'Gilroy', sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(110, 110, 110, 0.1) 0px 1px 8px 0px;
+    padding: 2px;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    }
+    .BGgroup div {
+      flex-flow: column wrap;
+      font-family: 'Gilroy', sans-serif;
+      padding: 5px;
+
+    }
+    h1 {
+    border-bottom: 1px solid rgb(242, 242, 242);
+    padding-left: 15px;
+    }
+    p {
+    border-bottom: 1px solid rgb(242, 242, 242);
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="BGgroup"><div><h1>Set up:</h1>
+  <table id="userTable">
+    <thead>
+      <tr>
+        <th>Discord User</th><th>Team</th><th>Operation</th>
+      </tr>
+    </thead>
+    <tbody id="userBody"></tbody>
+  </table>
+</div></div>
+<div class="BGgroup"><center><p>Data Management</p></center><div width="auto">
+  <button id="btnExportCSV"><h4>Save data to CSV</h4></button>
+  <input type="file" id="inputCSV" accept=".csv" style="display:none;">
+  <button id="btnImportCSV"><h4>Load data from CSV</h4></button>
+</div></div>
+  <div class="BGgroup">
+  <div><h1>Player list:</h1>  
+  <table id="dataTable">
+    <thead>
+      <tr>
+        <th>Name</th><th>Position</th><th>Second Position</th><th>Age</th><th>Rating</th><th>Potential</th>
+        <th>Favorite Opponent</th><th>Worst Opponent</th><th>Favorite Mindset</th><th>Worst Mindset</th>
+        <th>Favorite Formation</th><th>Price</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+  </div></div>
+  <script src="tbscr.js"></script>
+  <div class="BGgroup"><div><button onclick="generarImagenes()" style="padding: 0px 80px;"><h2>Make it!</h2></button></div></div>
+  <div id="imagenes" border="none"></div>
+  <canvas id="canvas" width="100" height="400" border="0"></canvas>
+  <div id="PostProceso" class="BGgroup"><div>
+  <button id="copiarImagen" style="padding: 0px 80px;"><h2>Clipboard</h2></button>
+  <button id="descargarImagen" style="padding: 0px 80px;"><h2>Download</h2></button>
+  </div></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
