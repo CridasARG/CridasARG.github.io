@@ -28,24 +28,24 @@ function generarImagenes() {
       return num.toLocaleString('de-DE');
     }
   
-    const imagenSuperior = new Image();
-    const imagenInferior = new Image();
-    let cargadas = 0;
+    // const imagenSuperior = new Image();
+    // const imagenInferior = new Image();
+    // let cargadas = 0;
   
-    imagenSuperior.onload = imagenInferior.onload = () => {
-      cargadas++;
-      if (cargadas === 2) {
-        document.fonts.load("700 80px 'Gilroy'").then(() => {
-          procesarTabla();
-        });
-      }    
-    };
+    // imagenSuperior.onload = imagenInferior.onload = () => {
+    //   cargadas++;
+    //   if (cargadas === 2) {
+    //     document.fonts.load("700 80px 'Gilroy'").then(() => {
+    //       procesarTabla();
+    //     });
+    //   }    
+    // };
   
-    imagenSuperior.onerror = () => alert("No se pudo cargar superior.png");
-    imagenInferior.onerror = () => alert("No se pudo cargar inferior.png");
+    // imagenSuperior.onerror = () => alert("No se pudo cargar superior.png");
+    // imagenInferior.onerror = () => alert("No se pudo cargar inferior.png");
   
-    imagenSuperior.src = "superior.jpeg";
-    imagenInferior.src = "inferior.jpeg";
+    // imagenSuperior.src = "superior.jpeg";
+    // imagenInferior.src = "inferior.jpeg";
   
     function procesarTabla() {
       function getX(colIdx) {
