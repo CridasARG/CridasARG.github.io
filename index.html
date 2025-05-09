@@ -6,13 +6,13 @@
   <style>
     @font-face {
       font-family: 'Gilroy';
-      src: url('./fonts/Gilroy-Regular.ttf') format('truetype');
+      src: url('fonts/Gilroy-Regular.ttf') format('truetype');
       font-weight: 200;
       font-style: normal;
     }
     @font-face {
       font-family: 'Gilroy';
-      src: url('./fonts/Gilroy-Medium.ttf') format('truetype');
+      src: url('fonts/Gilroy-Medium.ttf') format('truetype');
       font-weight: 400;
       font-style: normal;
     }
@@ -36,7 +36,7 @@
       background-color: #e5e5e5;
       font-family: 'Gilroy', sans-serif;
     }
-    table { border-collapse: collapse; width: auto; margin-bottom: 20px;}
+    table { border-collapse: collapse; width: auto; }
     th, td { border-bottom: 01px solid rgb(242, 242, 242); padding: 6px; text-align: center; }
     input { width: 90%;      font-family: 'Gilroy', sans-serif;
     }
@@ -73,6 +73,9 @@
   </style>
 </head>
 <body>
+<table id="organo">
+  <tr>
+    <th>
   <div class="BGgroup"><div><h1>Set up:</h1>
   <table id="userTable">
     <thead>
@@ -83,11 +86,16 @@
     <tbody id="userBody"></tbody>
   </table>
 </div></div>
+</th>
+<th>
 <div class="BGgroup"><center><p>Data Management</p></center><div width="auto">
   <button id="btnExportCSV"><h4>Save data to CSV</h4></button>
   <input type="file" id="inputCSV" accept=".csv" style="display:none;">
   <button id="btnImportCSV"><h4>Load data from CSV</h4></button>
 </div></div>
+</th>
+</tr>
+</table>
   <div class="BGgroup">
   <div><h1>Player list:</h1>  
   <table id="dataTable">

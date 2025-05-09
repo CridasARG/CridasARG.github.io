@@ -28,24 +28,25 @@ function generarImagenes() {
       return num.toLocaleString('de-DE');
     }
   
-    // const imagenSuperior = new Image();
-    // const imagenInferior = new Image();
-    // let cargadas = 0;
+    const imagenSuperior = new Image();
+    const imagenInferior = new Image();
+    let cargadas = 0;
   
     // imagenSuperior.onload = imagenInferior.onload = () => {
     //   cargadas++;
     //   if (cargadas === 2) {
-    //     document.fonts.load("700 80px 'Gilroy'").then(() => {
-    //       procesarTabla();
+        document.fonts.load("700 80px 'Gilroy'").then(() => {
+          procesarTabla();
+        });
     //     });
     //   }    
     // };
   
-    // imagenSuperior.onerror = () => alert("No se pudo cargar superior.png");
-    // imagenInferior.onerror = () => alert("No se pudo cargar inferior.png");
+    imagenSuperior.onerror = () => alert("No se pudo cargar superior.png");
+    imagenInferior.onerror = () => alert("No se pudo cargar inferior.png");
   
-    // imagenSuperior.src = "superior.jpeg";
-    // imagenInferior.src = "inferior.jpeg";
+    imagenSuperior.src = "superior.jpeg";
+    imagenInferior.src = "inferior.jpeg";
   
     function procesarTabla() {
       function getX(colIdx) {
@@ -150,8 +151,9 @@ function generarImagenes() {
       //const sellerUser = "@cridas";
       const sellerUser = udatos[0][0];
       ctx.fillText("contact: "+sellerUser, canvas.width / 2 - sellerUser.length*4, 80);
-      ctx.font = "10px 'Gilroy'";
+      ctx.font = "12px 'Gilroy'";
       ctx.fillText("generado por @cridas", canvas.width - 180, canvas.height - 20);
+      ctx.fillText("visit cridasarg.github.io", canvas.width - 180, canvas.height - 10);
   
       const yCabecera = 90;
       ctx.fillStyle = "#f0f0f0";
@@ -297,15 +299,15 @@ document.getElementById("copiarImagen").addEventListener("click", async () => {
   try {
     canvas.toBlob(async (blob) => {
       if (!blob) {
-        alert("No se pudo copiar la imagen.");
+        alert("Not Copied!");
         return;
       }
       const item = new ClipboardItem({ "image/png": blob });
       await navigator.clipboard.write([item]);
-      alert("Imagen copiada al portapapeles.");
+      alert("Copied!");
     });
   } catch (err) {
-    alert("Error al copiar la imagen: " + err);
+    alert("Error!" + err);
   }
 });
 //Descarga img
